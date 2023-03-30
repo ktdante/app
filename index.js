@@ -9,10 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let textbox1Value = 'Default Textbox 1 Value';
 let textbox2Value = 'Default Textbox 2 Value';
 
-res.render('index', {textbox1: textbox1, textbox2: textbox2});
-
-app.get('/', (req, res) => {
-  res.send(`
+app.get('/', function (req, res) {
+        res.send(`
     <form action="/save" method="POST">
       <label for="textbox1">Textbox 1:</label>
       <input type="text" id="textbox1" name="textbox1" value="${textbox1Value}">
@@ -23,7 +21,7 @@ app.get('/', (req, res) => {
       <button type="submit" name="action" value="edit">Edit</button>
     </form>
   `);
-});
+    });
 
 app.post('/save', (req, res) => {
   const action = req.body.action;
