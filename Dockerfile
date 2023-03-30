@@ -7,4 +7,4 @@ RUN mkdir -p /home/ktolga/app
 
 COPY . /home/ktolga/app
 
-CMD ["node", "server.js"]
+CMD ["node", "/home/ktolga/app/server.js"]
